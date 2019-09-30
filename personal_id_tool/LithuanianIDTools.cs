@@ -6,12 +6,16 @@ namespace IDTools
 {
     public static class LithuanianIDTools
     {
+        private static Random rnd;
         // Public methods:
+        static LithuanianIDTools()
+        {
+            rnd = new Random();
+        }
         public static string GenerateValidID()
         {
             while (true)
             {
-                Random rnd = new Random();
                 List<int> generatedID = new List<int> { rnd.Next(1, 7) };
                 generatedID
                     .UnpackAndAddValues(StringToIntList(rnd.Next(100).ToString("D2"))) /* Random year between 0 and 99 */
