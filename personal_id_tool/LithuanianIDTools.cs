@@ -18,10 +18,10 @@ namespace IDTools
             {
                 List<int> generatedID = new List<int> { rnd.Next(1, 7) };
                 generatedID
-                    .UnpackAndAddValues(StringToIntList(rnd.Next(100).ToString("D2"))) /* Random year between 0 and 99 */
-                    .UnpackAndAddValues(StringToIntList(rnd.Next(13).ToString("D2"))) /* Random month between 0 and 12 */
-                    .UnpackAndAddValues(StringToIntList(rnd.Next(32).ToString("D2"))) /* Random day between 0 and 31 */
-                    .UnpackAndAddValues(StringToIntList(rnd.Next(1000).ToString("D3"))); /* Random sequence number between 0 and 999 */
+                    .UnpackAndAddValues(StringToIntList(rnd.Next(100).ToString("D2"))) /* 96 */
+                    .UnpackAndAddValues(StringToIntList(rnd.Next(13).ToString("D2"))) /* 10 */
+                    .UnpackAndAddValues(StringToIntList(rnd.Next(32).ToString("D2"))) /* 25 */
+                    .UnpackAndAddValues(StringToIntList(rnd.Next(1000).ToString("D3"))); /* 130 */
                 if (IsDateCorrect(generatedID))
                 {
                     generatedID.Add(GetCheckNumber(generatedID));
@@ -29,7 +29,10 @@ namespace IDTools
                 }
             }
         }
-        public static List<string> GetCorrectCodes(string text)
+        public static List<string> 
+        
+        
+        GetCorrectCodes(string text)
         {
             List<string> correctCodes = new List<string>();
             List<string> possibleCodes = GetPossibleCodes(text);
